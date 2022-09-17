@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from app import views as app_view
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path('upload-csv/',app_view.ReadCSVView.as_view(),name='upload_csv'),
+    path('device-info/',app_view.DeviceLatestInfoView.as_view(),name='device-latest-data'),
+    path('device-data/',app_view.TimeBetweenDataView.as_view(),name='data-between-time'),
+    path('device-location/',app_view.LocationRetriveView.as_view(),name='device-locations'),
 ]
