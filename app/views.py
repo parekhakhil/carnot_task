@@ -20,7 +20,7 @@ from django.views.decorators.cache import cache_page
 
 # Create your views here.
 
-
+#Class for reading the csv data
 class ReadCSVView(APIView):
     parser_classes = [MultiPartParser, FileUploadParser, FormParser]
     # def get(self, request,*args,**kwargs):
